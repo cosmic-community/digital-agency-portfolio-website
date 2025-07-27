@@ -14,21 +14,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const serviceUrls = services.map((service: Service) => ({
       url: `${baseUrl}/services/${service.slug}`,
-      lastModified: new Date(service.modified_at),
+      lastModified: service.modified_at ? new Date(service.modified_at) : new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     }))
 
     const teamUrls = teamMembers.map((member: TeamMember) => ({
       url: `${baseUrl}/team/${member.slug}`,
-      lastModified: new Date(member.modified_at),
+      lastModified: member.modified_at ? new Date(member.modified_at) : new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     }))
 
     const caseStudyUrls = caseStudies.map((caseStudy: CaseStudy) => ({
       url: `${baseUrl}/case-studies/${caseStudy.slug}`,
-      lastModified: new Date(caseStudy.modified_at),
+      lastModified: caseStudy.modified_at ? new Date(caseStudy.modified_at) : new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     }))
