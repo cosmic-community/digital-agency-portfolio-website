@@ -3,7 +3,7 @@ import { getCaseStudy, getCaseStudies } from '@/lib/cosmic'
 import { CaseStudy } from '@/types'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeftIcon, ExternalLinkIcon } from '@heroicons/react/24/outline'
+import { ArrowLeftIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -85,7 +85,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   className="inline-flex items-center btn-primary"
                 >
                   View Live Project
-                  <ExternalLinkIcon className="w-5 h-5 ml-2" />
+                  <ArrowTopRightOnSquareIcon className="w-5 h-5 ml-2" />
                 </a>
               )}
             </div>
